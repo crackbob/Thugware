@@ -3,6 +3,7 @@ import AutoUnmute from "./Modules/autoUnmute";
 import BotMeeting from "./Modules/BotMeeting";
 import ChatSpammer from "./Modules/ChatSpammer";
 import HandSpammer from "./Modules/handSpammer";
+import HideNotifications from "./Modules/HideNotifications";
 import NameSpammer from "./Modules/nameSpammer";
 import ReactionSpammer from "./Modules/reactionSpammer";
 import SDK from "./SDK/SDK"
@@ -18,3 +19,4 @@ boomPanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
 boomPanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
 boomPanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
 boomPanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
+boomPanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
