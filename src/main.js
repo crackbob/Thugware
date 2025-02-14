@@ -11,6 +11,8 @@ import Panel from "./UI/Panel"
 
 let mainSDKInstance = new SDK(document.getElementById("webclient")?.contentWindow || window);
 
+window.Boom = mainSDKInstance;
+
 let boomPanel = new Panel("Boom");
 boomPanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
 boomPanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));

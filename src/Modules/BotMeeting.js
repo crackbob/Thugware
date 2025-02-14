@@ -12,12 +12,8 @@ function createBot (container) {
 
     let botSDK = new SDK(frame.contentWindow);
 
-    (botSDK.scope.webpackChunkwebclient = botSDK.scope.webpackChunkwebclient || []).push([[Symbol()], {}, function (require) {
-        let findModule = (code) => require(Object.keys(require.m)[Object.values(require.m).findIndex(m => m.toString().includes(code))]);
-        Object.values(findModule("webClient_meetingUqiueId:")).find(prop => prop?.webClient_meetingUqiueId).webClient_meetingUqiueId = Math.random().toString(36).substring(2,7);
-    }])
-
     frame.onload = function () {
+        Object.values(botSDK.hooks.findModule("webClient_meetingUqiueId:")).find(prop => prop?.webClient_meetingUqiueId).webClient_meetingUqiueId = Math.random().toString(36).substring(2,7);
         botSDK.loaded = true;
     }
 

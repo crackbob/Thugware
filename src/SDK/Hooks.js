@@ -1,30 +1,24 @@
 export default function (scope) {
     let cache = {};
+
     return {
         get wpRequire() {
-            if (!cache.wpRequire) {
+            if (!scope?.webpackChunkwebclient.find(arr => arr[2])) {
                 cache.wpRequire = scope.webpackChunkwebclient?.push([
                     [Symbol()], {},
                     r => r
                 ]);
             }
+            
             return cache.wpRequire;
         },
 
         get meetingSocket() {
-            if (!cache.meetingSocket) {
-                const wcs = Object.values(scope.WCSockets.instance)[0];
-                cache.meetingSocket = wcs?.socket;
-            }
-            return cache.meetingSocket;
+            return Object.values(scope.WCSockets.instance)[0].socket;
         },
 
         get store() {
-            if (!cache.store) {
-                const rootElement = scope.document.getElementById("root");
-                cache.store = Object.values(rootElement)[0].memoizedState.element.props.store;
-            }
-            return cache.store;
+            return Object.values(scope.document.getElementById("root"))[0].memoizedState.element.props.store;
         },
 
         get state () {

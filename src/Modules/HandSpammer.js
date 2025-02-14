@@ -8,11 +8,11 @@ function HandSpammer () {
             mainSDKInstance.actions.toggleHand();
 
             if (window.bots) {
-                if (bot?.loaded) {
-                    window.bots.forEach((bot) => { 
+                window.bots.forEach((bot) => { 
+                    if (bot?.loaded) {
                         bot.actions.toggleHand();
-                    })
-                }
+                    }
+                })
             }
 
         }, 10);
