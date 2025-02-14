@@ -9,11 +9,11 @@ function chatSpammer () {
             mainSDKInstance.actions.sendMessage(message);
 
             if (window.bots) {
-                if (bot?.loaded) {
-                    window.bots.forEach((bot) => { 
+                window.bots.forEach((bot) => { 
+                    if (bot?.loaded) {
                         bot.actions.sendMessage(message);
-                    })
-                }
+                    }
+                })
             }
         }, 10);
     }
