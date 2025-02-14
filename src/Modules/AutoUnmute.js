@@ -6,7 +6,7 @@ function AutoUnmute () {
     } else {
         AutoUnmute.interval = setInterval(function () {
             if (mainSDKInstance.hooks.state.meeting.currentUser.muted) {
-                mainSDKInstance.actions.unmute();
+                mainSDKInstance.actions.toggleMute(false);
                 mainSDKInstance.actions.toggleVideo(true);
             }
 
@@ -14,7 +14,7 @@ function AutoUnmute () {
                 if (bot?.loaded) {
                     window.bots.forEach((bot) => { 
                         if (bot.hooks.state.meeting.currentUser.muted) {
-                            bot.actions.unmute();
+                            bot.actions.toggleMute(false);
                             bot.actions.toggleVideo(true);
                         }
                     })
