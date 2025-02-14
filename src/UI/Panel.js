@@ -55,4 +55,28 @@ export default class {
         });
         this.panel.appendChild(button);
     }
+
+    addSlider(title, min, max, value, callback) {
+
+        let container = document.createElement('div');
+        container.style.padding = "5px";
+
+        let label = document.createElement('span');
+        label.innerText = title;
+        container.append(label);
+
+        let slider = document.createElement('input');
+        slider.className = "boom-slider";
+        slider.min = min;
+        slider.max = max;
+        slider.value = value;
+        slider.type = "range";
+        slider.enabled = false;
+        slider.addEventListener("change", function (event) {
+            callback(event.target.value);
+        });
+
+        container.appendChild(slider);
+        this.panel.appendChild(container);
+    }
 }

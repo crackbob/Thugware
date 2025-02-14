@@ -15,7 +15,7 @@ function HandSpammer () {
                 })
             }
 
-        }, 10);
+        }, window.spammerSpeed);
     }
 }
 

@@ -19,7 +19,7 @@ function ReactionSpammer () {
                     }
                 })
             }
-        }, 10);
+        }, window.spammerSpeed);
     }
 }
 

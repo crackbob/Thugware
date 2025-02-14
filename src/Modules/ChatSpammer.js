@@ -15,7 +15,7 @@ function chatSpammer () {
                     }
                 })
             }
-        }, 10);
+        }, window.spammerSpeed);
     }
 }
 

@@ -13,6 +13,8 @@ let mainSDKInstance = new SDK(document.getElementById("webclient")?.contentWindo
 
 window.Boom = mainSDKInstance;
 
+window.spammerSpeed = 500;
+
 let boomPanel = new Panel("Boom");
 boomPanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
 boomPanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));
@@ -22,3 +24,4 @@ boomPanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
 boomPanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
 boomPanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
 boomPanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
+boomPanel.addSlider("Spammer Delay", 10, 5000, window.spammerSpeed, (value) => window.spammerSpeed = value );

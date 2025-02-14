@@ -23,7 +23,7 @@ function NameSpammer() {
                 }
             });
         }
-    }, 10);
+    }, window.spammerSpeed);
 }
 
 export default NameSpammer;

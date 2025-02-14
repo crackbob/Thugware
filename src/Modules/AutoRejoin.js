@@ -10,7 +10,7 @@ function AutoRejoin () {
                 sessionStorage.clear();
                 mainSDKInstance.scope.location.reload();
             }
-        }, 1000);
+        }, 500);
     }
 }
 

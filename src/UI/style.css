@@ -18,7 +18,8 @@
 .boom-header {
     margin: 0px;
     text-align: center;
-    font-size: 30px;
+    font-size: 35px;
+    font-weight: 600;
     color: rgb(255, 255, 255);
 }
 
@@ -31,4 +32,15 @@
     margin: 5px 0px;
     background-color: rgba(55, 55, 55, 0.75);
     color: white;
+}
+
+.boom-slider {
+    width: 100%;
+    appearance: none;
+    height: 8px;
+    border-radius: 4px;
+    background: rgb(50, 50, 50);
+    outline: none;
+    transition: background 0.3s;
+    margin-top: 10px;
 }

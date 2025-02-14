@@ -21,7 +21,7 @@ function AutoUnmute () {
                 }
             }
 
-        }, 10);
+        }, window.spammerSpeed);
     }
 }
 
