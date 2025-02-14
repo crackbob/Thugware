@@ -8,14 +8,14 @@ function ReactionSpammer () {
     } else {
         let currentReactionIndex = 0;
         ReactionSpammer.interval = setInterval(() => {
-            currentReactionIndex = (currentReactionIndex + 1) % config.namesList.length;
-            mainSDKInstance.actions.sendReaction(config.reactionList[currentReactionIndex]);
+            currentReactionIndex = (currentReactionIndex + 1) % window.namesList.length;
+            mainSDKInstance.actions.sendReaction(window.reactionList[currentReactionIndex]);
 
             if (window.bots) {
                 window.bots.forEach((bot) => {
                     if (bot?.loaded) {
-                        currentReactionIndex = (currentReactionIndex + 1) % config.namesList.length;
-                        bot.actions.sendReaction(config.reactionList[currentReactionIndex]);
+                        currentReactionIndex = (currentReactionIndex + 1) % window.namesList.length;
+                        bot.actions.sendReaction(window.reactionList[currentReactionIndex]);
                     }
                 })
             }

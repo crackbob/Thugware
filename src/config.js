@@ -1,4 +1,4 @@
-let namesList = [
+window.namesList = [
     "James", "Mary", "John", "Patricia", "Robert", "Jennifer", "Michael", "Linda", "William", "Elizabeth",
     "David", "Barbara", "Richard", "Susan", "Joseph", "Jessica", "Thomas", "Sarah", "Charles", "Karen",
     "Christopher", "Nancy", "Daniel", "Lisa", "Matthew", "Margaret", "Anthony", "Betty", "Donald", "Sandra",
@@ -15,7 +15,7 @@ let namesList = [
     "Xander", "Camila", "Kai", "Serenity", "Liam", "Julia", "Quinn", "Vivian", "Ryder", "Sienna"
 ];
 
-let reactionList = [
+window.reactionList = [
     "💀", "☠", "🤣", "😂", "😄", "😅", "😊", "😇", "😉", "😍", 
     "😘", "😜", "🤪", "🤩", "😎", "😏", "😡", "😱", "😳", "😢", 
     "😭", "😤", "😬", "😷", "🤔", "🤨", "🤗", "🤭", "🙄", "😬", 
@@ -26,5 +26,3 @@ let reactionList = [
     "🌼", "🌻", "🌺", "🌷", "🍀", "🍂", "🍁", "🌊", "🏖️", "🏞️",
     "🌍", "🌌", "🌈", "⭐", "🌟", "💫", "🌠", "🌌", "🦄", "🐉"
 ];
-
-export default { namesList, reactionList };

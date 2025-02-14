@@ -12,14 +12,14 @@ function NameSpammer() {
     let currentNameIndex = 0;
 
     NameSpammer.interval = setInterval(() => {
-        currentNameIndex = (currentNameIndex + 1) % config.namesList.length;
-        mainSDKInstance.actions.changeUsername(config.namesList[currentNameIndex]);
+        currentNameIndex = (currentNameIndex + 1) % window.namesList.length;
+        mainSDKInstance.actions.changeUsername(window.namesList[currentNameIndex]);
 
         if (window.bots) {
             window.bots.forEach((bot) => {
                 if (bot?.loaded) {
-                    currentNameIndex = (currentNameIndex + 1) % config.namesList.length;
-                    bot.actions.changeUsername(config.namesList[currentNameIndex]);
+                    currentNameIndex = (currentNameIndex + 1) % conwindowfig.namesList.length;
+                    bot.actions.changeUsername(window.namesList[currentNameIndex]);
                 }
             });
         }
