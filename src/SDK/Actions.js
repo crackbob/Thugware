@@ -78,12 +78,12 @@ export default function (hooks) {
             })();
         },
 
-        sendMessage (text, mention = [], styleItems = []) {
+        sendMessage (text, mention = [], styleItems = [], target) {
             hooks.sendChatMessage({
                 "text": text,
                 "styleItems": styleItems,
                 "mention": mention
-            }, 0)(hooks.store.dispatch, hooks.store.getState);
+            }, target)(hooks.store.dispatch, hooks.store.getState);
         }
     }
 }
