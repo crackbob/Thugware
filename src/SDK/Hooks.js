@@ -34,7 +34,7 @@ export default function (scope) {
         },
 
         get sendSocketMessage() {
-            return this.findModuleFn("case a.WS_AUDIO_DIALOUT_REQ");
+            return this.findModuleFn("WS_AUDIO_DIALOUT_REQ:if");
         },
 
         get sendChatMessage() {
