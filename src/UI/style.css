@@ -1,4 +1,4 @@
-.boom-panel {
+.Thugware-panel {
     position: fixed;
     width: 250px;
     height: auto;
@@ -15,7 +15,7 @@
     user-select: none;
 }
 
-.boom-header {
+.Thugware-header {
     margin: 0px;
     text-align: center;
     font-size: 35px;
@@ -25,7 +25,7 @@
     text-shadow: 1px 1px 2px #00ff43, 0 0 1em #138500, 0 0 0.2em #082d00;
 }
 
-.boom-button {
+.Thugware-button {
     padding: 8px 12px;
     width: 100%;
     border: none;
@@ -36,7 +36,7 @@
     color: white;
 }
 
-.boom-slider {
+.Thugware-slider {
     width: 100%;
     appearance: none;
     height: 8px;

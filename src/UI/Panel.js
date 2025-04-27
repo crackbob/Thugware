@@ -3,11 +3,11 @@ import "./style.css";
 export default class {
     constructor(title) {
         this.panel = document.createElement('div');
-        this.panel.className = "boom-panel";
+        this.panel.className = "Thugware-panel";
         document.body.appendChild(this.panel);
         
         this.header = document.createElement('h2');
-        this.header.className = "boom-header";
+        this.header.className = "Thugware-header";
         this.header.textContent = title;
         this.panel.appendChild(this.header);
 
@@ -89,7 +89,7 @@ export default class {
 
     addButton(title, callback) {
         let button = document.createElement('button');
-        button.className = "boom-button";
+        button.className = "Thugware-button";
         button.innerText = title;
         button.enabled = false;
         button.addEventListener("click", function () {
@@ -117,7 +117,7 @@ export default class {
         container.append(label);
 
         let slider = document.createElement('input');
-        slider.className = "boom-slider";
+        slider.className = "Thugware-slider";
         slider.min = min;
         slider.max = max;
         slider.value = value;

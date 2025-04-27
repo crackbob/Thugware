@@ -5,7 +5,7 @@ module.exports = {
     entry: "./src/main.js",
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: "Boom.min.js",
+        filename: "Thugware.min.js",
     },
     module: {
         rules: [

@@ -11,17 +11,17 @@ import Panel from "./UI/Panel"
 
 let mainSDKInstance = new SDK(document.getElementById("webclient")?.contentWindow || window);
 
-window.Boom = mainSDKInstance;
+window.Thugware = mainSDKInstance;
 
 window.spammerSpeed = 10;
 
-let boomPanel = new Panel("THUGWARE");
-boomPanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
-boomPanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));
-boomPanel.addButton("Reaction Spammer", ReactionSpammer.bind(mainSDKInstance));
-boomPanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
-boomPanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
-boomPanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
-boomPanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
-boomPanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
-boomPanel.addSlider("Spammer Delay", 0, 5000, window.spammerSpeed, (value) => window.spammerSpeed = value );
+let ThugwarePanel = new Panel("THUGWARE");
+ThugwarePanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
+ThugwarePanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));
+ThugwarePanel.addButton("Reaction Spammer", ReactionSpammer.bind(mainSDKInstance));
+ThugwarePanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
+ThugwarePanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
+ThugwarePanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
+ThugwarePanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
+ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
+ThugwarePanel.addSlider("Spammer Delay", 0, 5000, window.spammerSpeed, (value) => window.spammerSpeed = value );
