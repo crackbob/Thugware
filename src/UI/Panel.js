@@ -38,7 +38,7 @@ export default class {
         toggleButton.style.color = "#fff";
         toggleButton.style.borderRadius = "0 5px 5px 0";
         toggleButton.style.cursor = "pointer";
-        toggleButton.style.zIndex = "10000";
+        toggleButton.style.zIndex = "9999999";
         toggleButton.style.userSelect = "none";
 
         toggleButton.addEventListener("click", this.toggle.bind(this));
