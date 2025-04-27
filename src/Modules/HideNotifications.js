@@ -3,12 +3,16 @@ let hiding = false;
 function HideNotifications () {
     hiding = !hiding;
 
-    if (hiding) {
-        this.scope.document.getElementById("notificationManager").style.opacity = "0";
-    } else {
-        this.scope.document.getElementById("notificationManager").style.opacity = "1";
-    }
+    const scopedNotification = this.scope.document.getElementById("notificationManager");
+    const topNotification = top.document.getElementById("notificationManager");
 
+    if (hiding) {
+        if (scopedNotification) scopedNotification.style.opacity = "0";
+        if (topNotification) topNotification.style.opacity = "1";
+    } else {
+        if (scopedNotification) scopedNotification.style.opacity = "1";
+        if (topNotification) topNotification.style.opacity = "1";
+    }
 }
 
 export default HideNotifications;

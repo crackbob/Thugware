@@ -15,7 +15,7 @@ window.Boom = mainSDKInstance;
 
 window.spammerSpeed = 10;
 
-let boomPanel = new Panel("Boom");
+let boomPanel = new Panel("THUGWARE");
 boomPanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
 boomPanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));
 boomPanel.addButton("Reaction Spammer", ReactionSpammer.bind(mainSDKInstance));

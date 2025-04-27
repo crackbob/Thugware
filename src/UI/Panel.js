@@ -34,7 +34,7 @@ export default class {
         toggleButton.style.left = "0px";
         toggleButton.style.padding = "10px 10px";
         toggleButton.style.backgroundColor = "rgba(25, 25, 25, 0.75)";
-        toggleButton.style.border = "1px solid rgb(68, 68, 68)";
+        toggleButton.style.border = "1px solid rgb(0 255 10)";
         toggleButton.style.color = "#fff";
         toggleButton.style.borderRadius = "0 5px 5px 0";
         toggleButton.style.cursor = "pointer";
