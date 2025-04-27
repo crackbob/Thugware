@@ -15,6 +15,55 @@ export default class {
         this.offset = { x: 0, y: 0 };
 
         this.initDrag();
+        this.initToggleButton();
+    }
+
+    toggle () {
+        if (this.panel.style.display === 'none') {
+            this.panel.style.display = 'block';
+        } else {
+            this.panel.style.display = 'none';
+        }
+    }
+
+    initToggleButton () {
+        let toggleButton = document.createElement("div");
+        toggleButton.textContent = "💣";
+        toggleButton.style.position = "fixed";
+        toggleButton.style.top = "50px";
+        toggleButton.style.left = "0px";
+        toggleButton.style.padding = "10px 10px";
+        toggleButton.style.backgroundColor = "rgba(25, 25, 25, 0.75)";
+        toggleButton.style.border = "1px solid rgb(68, 68, 68)";
+        toggleButton.style.color = "#fff";
+        toggleButton.style.borderRadius = "0 5px 5px 0";
+        toggleButton.style.cursor = "pointer";
+        toggleButton.style.zIndex = "10000";
+        toggleButton.style.userSelect = "none";
+
+        toggleButton.addEventListener("click", this.toggle.bind(this));
+
+        let isDragging = false;
+        let offsetY = 0;
+
+        toggleButton.addEventListener("mousedown", function (event) {
+            isDragging = true;
+            offsetY = event.clientY - toggleButton.getBoundingClientRect().top;
+            event.preventDefault();
+        });
+
+        document.addEventListener("mousemove", function (event) {
+            if (isDragging) {
+                toggleButton.style.top = `${event.clientY - offsetY}px`;
+            }
+        });
+
+        document.addEventListener("mouseup", function () {
+            isDragging = false;
+        });
+
+        document.body.appendChild(toggleButton);
+
     }
 
     initDrag() {
