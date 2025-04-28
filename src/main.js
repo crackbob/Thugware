@@ -18,7 +18,7 @@ if (!alreadyInjected) {
 
     window.Thugware = mainSDKInstance;
 
-    window.spammerSpeed = 10;
+    window.spammerSpeed = 1;
 
     let ThugwarePanel = new Panel("THUGWARE", true);
     ThugwarePanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
@@ -31,5 +31,4 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Reactions", HideReactions.bind(mainSDKInstance));
     ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
-    ThugwarePanel.addSlider("Spammer Delay", 0, 5000, window.spammerSpeed, (value) => window.spammerSpeed = value );
 }

@@ -98,39 +98,13 @@ export default class {
         button.addEventListener("click", function () {
             button.enabled = !button.enabled;
             if (button.enabled) {
-                button.style.backgroundColor = "rgba(55, 55, 55, 0.85)";
-                button.style.border = "rgb(41 255 0) solid 1px";
+                button.style.backgroundColor = "rgba(0, 194, 48, 0.85)";
             } else {
-                button.style.backgroundColor = "rgba(30, 30, 30, 0.85)";
-                button.style.border = "none";
+                button.style.backgroundColor = "rgb(26 26 26 / 75%)";
             }
 
             callback();
         });
         this.panel.appendChild(button);
-    }
-
-    addSlider(title, min, max, value, callback) {
-
-        let container = document.createElement('div');
-        container.style.padding = "5px";
-
-        let label = document.createElement('span');
-        label.innerText = title;
-        container.append(label);
-
-        let slider = document.createElement('input');
-        slider.className = "Thugware-slider";
-        slider.min = min;
-        slider.max = max;
-        slider.value = value;
-        slider.type = "range";
-        slider.enabled = false;
-        slider.addEventListener("change", function (event) {
-            callback(event.target.value);
-        });
-
-        container.appendChild(slider);
-        this.panel.appendChild(container);
     }
 }
