@@ -59,13 +59,17 @@ export default function (hooks) {
                 enabled = !hooks.state.meeting.currentUser.bVideoOn;
             }
 
-            hooks.sendSocketMessage({
-                evt: hooks.packets.WS_VIDEO_MUTE_VIDEO_REQ,
-                body: {
-                    id: hooks.state.meeting.currentUser.userId,
-                    bOn: !enabled // i don't know why but it has to be the opposite
-                }
-            })(()=>{});
+            if (enabled) {
+                hooks.findModuleFn("user start capture video")()(Thugware.hooks.store.dispatch, Thugware.hooks.store.getState);
+            } else {
+                hooks.sendSocketMessage({
+                    evt: hooks.packets.WS_VIDEO_MUTE_VIDEO_REQ,
+                    body: {
+                        id: hooks.state.meeting.currentUser.userId,
+                        bOn: !enabled // i don't know why but it has to be the opposite
+                    }
+                })(()=>{});
+            }
         },
 
         sendReaction (emoji) {
