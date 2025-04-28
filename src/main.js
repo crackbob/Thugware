@@ -4,6 +4,7 @@ import BotMeeting from "./Modules/BotMeeting";
 import ChatSpammer from "./Modules/ChatSpammer";
 import HandSpammer from "./Modules/handSpammer";
 import HideNotifications from "./Modules/HideNotifications";
+import HideReactions from "./Modules/HideReactions";
 import NameSpammer from "./Modules/nameSpammer";
 import ReactionSpammer from "./Modules/reactionSpammer";
 import RecordMembers from "./Modules/RecordMembers";
@@ -28,6 +29,7 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
     ThugwarePanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Hide Reactions", HideReactions.bind(mainSDKInstance));
     ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
     ThugwarePanel.addSlider("Spammer Delay", 0, 5000, window.spammerSpeed, (value) => window.spammerSpeed = value );
 }
