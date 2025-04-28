@@ -12,6 +12,8 @@ function createBot (container) {
 
     let botSDK = new SDK(frame.contentWindow);
 
+    frame.contentWindow.thugbot = true;
+
     frame.onload = function () {
         Object.values(botSDK.hooks.findModule("webClient_meetingUqiueId:")).find(prop => prop?.webClient_meetingUqiueId).webClient_meetingUqiueId = Math.random().toString(36).substring(2,7);
         botSDK.loaded = true;

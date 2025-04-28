@@ -10,20 +10,24 @@ import RecordMembers from "./Modules/RecordMembers";
 import SDK from "./SDK/SDK"
 import Panel from "./UI/Panel"
 
-let mainSDKInstance = new SDK(document.getElementById("webclient")?.contentWindow || window);
+let alreadyInjected = !!top?.Thugware || window?.thugbot;
 
-window.Thugware = mainSDKInstance;
+if (!alreadyInjected) {
+    let mainSDKInstance = new SDK(document.getElementById("webclient")?.contentWindow || window);
 
-window.spammerSpeed = 10;
+    window.Thugware = mainSDKInstance;
 
-let ThugwarePanel = new Panel("THUGWARE", true);
-ThugwarePanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
-ThugwarePanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));
-ThugwarePanel.addButton("Reaction Spammer", ReactionSpammer.bind(mainSDKInstance));
-ThugwarePanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
-ThugwarePanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
-ThugwarePanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
-ThugwarePanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
-ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
-ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
-ThugwarePanel.addSlider("Spammer Delay", 0, 5000, window.spammerSpeed, (value) => window.spammerSpeed = value );
+    window.spammerSpeed = 10;
+
+    let ThugwarePanel = new Panel("THUGWARE", true);
+    ThugwarePanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Reaction Spammer", ReactionSpammer.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
+    ThugwarePanel.addSlider("Spammer Delay", 0, 5000, window.spammerSpeed, (value) => window.spammerSpeed = value );
+}
