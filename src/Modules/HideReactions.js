@@ -24,7 +24,7 @@ function HideReactions () {
 
     if (!packetInterceptor) {
         packetInterceptor = mainSDKInstance.packetHandler.onPacket((packet, ctx) => {
-            if ((packet?.body?.update?.[0]?.id !== mainSDKInstance.hooks.state.meeting.currentUser.userId) && hiding) {
+            if (!!packet?.body?.update?.[0]?.bRaiseHand && hiding) {
                 // i dont know why but webpack breaks it so i gotta check twice
                 if (packet?.body?.update?.[0]) {
                     packet.body.update[0].bRaiseHand = false;
