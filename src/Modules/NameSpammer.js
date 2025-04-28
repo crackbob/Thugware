@@ -18,7 +18,7 @@ function NameSpammer() {
         if (window.bots) {
             window.bots.forEach((bot) => {
                 if (bot?.loaded) {
-                    currentNameIndex = (currentNameIndex + 1) % conwindowfig.namesList.length;
+                    currentNameIndex = (currentNameIndex + 1) % window.namesList.length;
                     bot.actions.changeUsername(window.namesList[currentNameIndex]);
                 }
             });

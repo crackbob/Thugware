@@ -46,13 +46,11 @@ function RecordMembers () {
         membersPanel = null;
         return;
     }
-
+    
     let memberVideos = {};
-    let videoPanels = mainSDKInstance.scope.document.querySelector(`[role="presentation"].main-layout`).firstChild.firstChild.firstChild.children;
+    let videoPanels = mainSDKInstance.scope.document.getElementsByTagName("video-player");
     Object.values(videoPanels).forEach((element) => {
-        if (element.firstChild.firstChild.tagName == "VIDEO-PLAYER") {
-            memberVideos[element.lastChild.lastChild.firstChild.innerText] = element.firstChild.firstChild;
-        }
+        memberVideos[element.parentElement.lastChild.firstChild.innerText] = element;
     });
 
     Object.keys(memberVideos).forEach((memberName, index) => membersPanel.addButton(memberName, () => recordMember(index, memberVideos[memberName], memberName)));
