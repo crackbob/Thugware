@@ -99,7 +99,7 @@ export default class {
             button.enabled = !button.enabled;
             if (button.enabled) {
                 button.style.backgroundColor = "rgba(83, 83, 83, 0.75)";
-                button.style.border = "rgb(193, 193, 193, 0.75) solid 1px";
+                button.style.border = "rgb(41 255 0) solid 1px";
             } else {
                 button.style.backgroundColor = "rgba(55, 55, 55, 0.75)";
                 button.style.border = "none";
