@@ -14,17 +14,17 @@ function AutoUnmute () {
             }
 
             if (window.bots) {
-                if (bot?.loaded) {
-                    window.bots.forEach((bot) => { 
+                window.bots.forEach((bot) => {
+                    if (bot?.loaded) { 
                         if (bot.hooks.state.meeting.currentUser.muted) {
                             bot.actions.toggleMute(false);
                         }
-            
+                
                         if (!bot.hooks.state.meeting.currentUser.bVideoOn) {
                             bot.actions.toggleVideo(true);
                         }
-                    })
-                }
+                    }
+                })
             }
 
         }, window.spammerSpeed);
