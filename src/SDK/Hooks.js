@@ -14,7 +14,7 @@ export default function (scope) {
         },
 
         get meetingSocket() {
-            return Object.values(scope.WCSockets.instance)[0].socket;
+            return Object.values(scope.WCSockets.instance)[0];
         },
 
         get store() {
