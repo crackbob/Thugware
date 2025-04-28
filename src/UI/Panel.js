@@ -98,10 +98,10 @@ export default class {
         button.addEventListener("click", function () {
             button.enabled = !button.enabled;
             if (button.enabled) {
-                button.style.backgroundColor = "rgba(83, 83, 83, 0.75)";
+                button.style.backgroundColor = "rgba(55, 55, 55, 0.85)";
                 button.style.border = "rgb(41 255 0) solid 1px";
             } else {
-                button.style.backgroundColor = "rgba(55, 55, 55, 0.75)";
+                button.style.backgroundColor = "rgba(30, 30, 30, 0.85)";
                 button.style.border = "none";
             }
 

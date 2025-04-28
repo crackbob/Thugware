@@ -3,7 +3,7 @@
     width: 250px;
     height: auto;
     border: 1px solid rgb(68, 68, 68);
-    background-color: rgba(25, 25, 25, 0.75);
+    background-color: rgb(10 10 10 / 90%);
     backdrop-filter: blur(4px);
     color: rgb(255, 255, 255);
     padding: 10px;
@@ -32,7 +32,7 @@
     border-radius: 5px;
     cursor: pointer;
     margin: 5px 0px;
-    background-color: rgba(55, 55, 55, 0.75);
+    background-color: rgba(30, 30, 30, 0.75);
     color: white;
 }
 
