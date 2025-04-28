@@ -1,7 +1,7 @@
 import "./style.css";
 
 export default class {
-    constructor(title) {
+    constructor(title, toggle = true) {
         this.panel = document.createElement('div');
         this.panel.className = "Thugware-panel";
         document.body.appendChild(this.panel);
@@ -15,7 +15,10 @@ export default class {
         this.offset = { x: 0, y: 0 };
 
         this.initDrag();
-        this.initToggleButton();
+
+        if (toggle) {
+            this.initToggleButton();
+        }
     }
 
     toggle () {
