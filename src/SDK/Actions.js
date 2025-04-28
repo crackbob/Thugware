@@ -78,6 +78,15 @@ export default function (hooks) {
             })();
         },
 
+        requestAI () {
+            hooks.sendSocketMessage({
+                "evt": hooks.packets.WS_CONF_QUERY_OP_REQ,
+                "body": {
+                    "type": "reqAICStart"
+                }
+            })();
+        },
+
         sendMessage (text, mention = [], styleItems = [], target) {
             hooks.sendChatMessage({
                 "text": text,

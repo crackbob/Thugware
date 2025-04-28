@@ -3,12 +3,13 @@ import AutoUnmute from "./Modules/autoUnmute";
 import BotMeeting from "./Modules/BotMeeting";
 import ChatSpammer from "./Modules/ChatSpammer";
 import ForceHostKey from "./Modules/ForceHostKey";
-import HandSpammer from "./Modules/handSpammer";
+import HandSpammer from "./Modules/HandSpammer";
 import HideNotifications from "./Modules/HideNotifications";
 import HideReactions from "./Modules/HideReactions";
 import NameSpammer from "./Modules/nameSpammer";
 import ReactionSpammer from "./Modules/reactionSpammer";
 import RecordMembers from "./Modules/RecordMembers";
+import SpamRequestAI from "./Modules/SpamRequestAI";
 import SDK from "./SDK/SDK"
 import Panel from "./UI/Panel"
 
@@ -24,6 +25,7 @@ if (!alreadyInjected) {
     let ThugwarePanel = new Panel("THUGWARE", true);
     ThugwarePanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
     ThugwarePanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Request AI Spammer", SpamRequestAI.bind(mainSDKInstance));
     ThugwarePanel.addButton("Reaction Spammer", ReactionSpammer.bind(mainSDKInstance));
     ThugwarePanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
     ThugwarePanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
