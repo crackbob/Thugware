@@ -33,6 +33,11 @@ export default function (scope) {
             return Object.values(this.findModule(code)).find(m => m.toString().includes(code));
         },
 
+        getPacketName(id) {
+            let packetIndex = Object.values(this.packets).findIndex(packet => packet == id);
+            return Object.keys(this.packets)[packetIndex];
+        },
+
         get sendSocketMessage() {
             return this.findModuleFn("WS_AUDIO_DIALOUT_REQ:if");
         },

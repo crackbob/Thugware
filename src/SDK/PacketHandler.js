@@ -3,13 +3,11 @@ export default function (hooks) {
         initialized: false
     };
 
-    let packetHandlerIndex = 0;
     ts.packetHandlers = [];
 
     ts.onPacket = function (handler) {
-        packetHandlerIndex++;
         ts.packetHandlers.push(handler);
-        return packetHandlerIndex;
+        return ts.packetHandlers.length - 1;
     }
 
     ts.init = function () {

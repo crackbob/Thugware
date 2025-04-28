@@ -2,6 +2,7 @@ import AutoRejoin from "./Modules/AutoRejoin";
 import AutoUnmute from "./Modules/autoUnmute";
 import BotMeeting from "./Modules/BotMeeting";
 import ChatSpammer from "./Modules/ChatSpammer";
+import ForceHostKey from "./Modules/ForceHostKey";
 import HandSpammer from "./Modules/handSpammer";
 import HideNotifications from "./Modules/HideNotifications";
 import HideReactions from "./Modules/HideReactions";
@@ -31,4 +32,5 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Reactions", HideReactions.bind(mainSDKInstance));
     ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Force Host Key", ForceHostKey.bind(mainSDKInstance));
 }
