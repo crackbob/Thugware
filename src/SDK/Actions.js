@@ -91,6 +91,16 @@ export default function (hooks) {
             });
         },
 
+        requestScreenshare (uid) {
+            hooks.sendSocketMessage({
+                "evt": hooks.packets.WS_SHARING_REMOTE_CONTROL_REQ,
+                "body": {
+                    "id": uid,
+                    "bOn": true
+                }
+            });
+        },
+
         sendMessage (text, mention = [], styleItems = [], target) {
             hooks.sendChatMessage({
                 "text": text,

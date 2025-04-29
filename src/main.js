@@ -10,6 +10,7 @@ import NameSpammer from "./Modules/nameSpammer";
 import ReactionSpammer from "./Modules/reactionSpammer";
 import RecordMembers from "./Modules/RecordMembers";
 import SpamRequestAI from "./Modules/SpamRequestAI";
+import SpamSSControl from "./Modules/SpamSSControl";
 import SDK from "./SDK/SDK"
 import Panel from "./UI/Panel"
 
@@ -29,10 +30,12 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
     ThugwarePanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
     ThugwarePanel.addButton("Request AI Spammer", SpamRequestAI.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Spam Request Screenshare", SpamSSControl.bind(mainSDKInstance));
     ThugwarePanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
     ThugwarePanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Reactions", HideReactions.bind(mainSDKInstance));
     ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
     ThugwarePanel.addButton("Force Host Key", ForceHostKey.bind(mainSDKInstance));
+    
 }
