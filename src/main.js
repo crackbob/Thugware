@@ -30,7 +30,7 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
     ThugwarePanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
     ThugwarePanel.addButton("Request AI Spammer", SpamRequestAI.bind(mainSDKInstance));
-    ThugwarePanel.addButton("Spam Request Screenshare", SpamSSControl.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Spam Screenshare Control", SpamSSControl.bind(mainSDKInstance));
     ThugwarePanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
     ThugwarePanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
