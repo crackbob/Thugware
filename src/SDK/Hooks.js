@@ -60,6 +60,10 @@ export default function (scope) {
 
         get easyStore() {
             return cache.easyStore ??= Object.values(this.findModule(`easyStore=`)).find(prop => prop?.easyGet);
+        },
+
+        recache () {
+            cache = {};
         }
     };
 }

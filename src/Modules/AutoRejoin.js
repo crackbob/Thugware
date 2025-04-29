@@ -11,6 +11,7 @@ function AutoRejoin () {
                 mainSDKInstance.scope.localStorage.clear();
                 mainSDKInstance.scope.sessionStorage.clear();
                 mainSDKInstance.scope.location.reload();
+                mainSDKInstance.hooks.recache();
             }
         }, 500);
     }
