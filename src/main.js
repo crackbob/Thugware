@@ -25,10 +25,10 @@ if (!alreadyInjected) {
     let ThugwarePanel = new Panel("THUGWARE", true);
     ThugwarePanel.addButton("Hand Spammer", HandSpammer.bind(mainSDKInstance));
     ThugwarePanel.addButton("Name Spammer", NameSpammer.bind(mainSDKInstance));
-    ThugwarePanel.addButton("Request AI Spammer", SpamRequestAI.bind(mainSDKInstance));
     ThugwarePanel.addButton("Reaction Spammer", ReactionSpammer.bind(mainSDKInstance));
     ThugwarePanel.addButton("Auto Unmute", AutoUnmute.bind(mainSDKInstance));
     ThugwarePanel.addButton("Chat Spammer", ChatSpammer.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Request AI Spammer", SpamRequestAI.bind(mainSDKInstance));
     ThugwarePanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
     ThugwarePanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));

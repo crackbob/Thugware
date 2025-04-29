@@ -8,6 +8,8 @@ function AutoRejoin () {
             if (mainSDKInstance.scope.document.getElementsByClassName("zm-btn zm-btn-legacy zm-btn--primary")?.[0]?.innerText == "Exit" || mainSDKInstance.scope.document.getElementsByClassName("zm-btn zm-btn-legacy zm-btn--primary zm-btn__outline--blue")?.[0]?.innerText === "Leave") {
                 localStorage.clear();
                 sessionStorage.clear();
+                mainSDKInstance.scope.localStorage.clear();
+                mainSDKInstance.scope.sessionStorage.clear();
                 mainSDKInstance.scope.location.reload();
             }
         }, 500);
