@@ -1,5 +1,8 @@
 function HandSpammer () {
     let mainSDKInstance = this;
+
+    let raisedHand = mainSDKInstance.hooks.state.meeting.currentUser.bRaiseHand;
+
     if (HandSpammer.interval) {
         clearInterval(HandSpammer.interval);
         HandSpammer.interval = undefined;
@@ -17,17 +20,18 @@ function HandSpammer () {
 
     } else {
         HandSpammer.interval = setInterval(function () {
-            mainSDKInstance.actions.toggleHand();
+            raisedHand = !raisedHand;
+            mainSDKInstance.actions.toggleHand(raisedHand);
 
             if (window.bots) {
                 window.bots.forEach((bot) => { 
                     if (bot?.loaded) {
-                        bot.actions.toggleHand();
+                        bot.actions.toggleHand(raisedHand);
                     }
                 })
             }
 
-        }, window.spammerSpeed);
+        }, 50 + window.spammerSpeed);
     }
 }
 
