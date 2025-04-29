@@ -22,6 +22,8 @@ function ForceHostKey () {
         return;
     }
 
+    alert("This will probably take a LONG time, but you will be alerted with the code");
+
     let hostKey = 0;
     packetHandler = Thugware.packetHandler.onPacket(function (packet, ctx) {
         if (packet?.body?.bresult) {
