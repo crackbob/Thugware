@@ -79,7 +79,7 @@ export default function (hooks) {
                     uNodeID: hooks.state.meeting.currentUser.userId,
                     strEmojiContent: emoji
                 }
-            })();
+            });
         },
 
         requestAI () {
