@@ -39,27 +39,27 @@ export default function (scope) {
         },
 
         get sendSocketMessage() {
-            return this.findModuleFn("WS_AUDIO_DIALOUT_REQ:if");
+            return cache.sendSocketMessage ??= this.meetingSocket.send.bind(this.meetingSocket);
         },
 
         get sendChatMessage() {
-            return this.findModuleFn("mention,localXmppMsgId");
+            return cache.sendChatMessage ??= this.findModuleFn("mention,localXmppMsgId");
         },
 
         get packets() {
-            return this.findModule("WS_CONF_RENAME_REQ");
+            return cache.packets ??= this.findModule("WS_CONF_RENAME_REQ");
         },
 
         get actionPackets() {
-            return this.findModule("USER_NODE_AUDIO_STATUS_LIST:()");
+            return cache.actionPackets ??= this.findModule("USER_NODE_AUDIO_STATUS_LIST:()");
         },
 
-        get showToast () {
-            return Object.values(this.findModule("AliveToast.uniqueToast"))[0].toast;
+        get showToast() {
+            return cache.showToast ??= Object.values(this.findModule("AliveToast.uniqueToast"))[0].toast;
         },
 
-        get easyStore () {
-            return Object.values(this.findModule(`easyStore=`)).find(prop => prop?.easyGet);
+        get easyStore() {
+            return cache.easyStore ??= Object.values(this.findModule(`easyStore=`)).find(prop => prop?.easyGet);
         }
     };
 }

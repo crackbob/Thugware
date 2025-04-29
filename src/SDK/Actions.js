@@ -8,7 +8,7 @@ export default function (hooks) {
                     dn2: btoa(username),
                     olddn2: btoa(hooks.state.meeting.currentUser.displayName)
                 }
-            })();
+            });
         },
         
         toggleMute (enabled) {
@@ -27,7 +27,7 @@ export default function (hooks) {
                         "muted": enabled
                     }]
                 }
-            })();
+            });
             
             hooks.sendSocketMessage({
                 "evt": hooks.packets.WS_AUDIO_MUTE_REQ,
@@ -35,7 +35,7 @@ export default function (hooks) {
                     "id": hooks.state.meeting.currentUser.userId,
                     "bMute": enabled
                 }
-            })();
+            });
         },
 
         toggleHand (enabled) {
@@ -50,7 +50,7 @@ export default function (hooks) {
                     "id": hooks.state.meeting.currentUser.userId,
                     "bOn": enabled
                 }
-            })(()=>{});
+            });
         },
         
         toggleVideo (enabled) {
@@ -68,7 +68,7 @@ export default function (hooks) {
                         id: hooks.state.meeting.currentUser.userId,
                         bOn: !enabled // i don't know why but it has to be the opposite
                     }
-                })(()=>{});
+                });
             }
         },
 
@@ -88,7 +88,7 @@ export default function (hooks) {
                 "body": {
                     "type": "reqAICStart"
                 }
-            })();
+            });
         },
 
         sendMessage (text, mention = [], styleItems = [], target) {
