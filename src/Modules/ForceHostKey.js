@@ -1,16 +1,16 @@
 let packetHandler = null;
 
-function tryHostKey (key) {
-    Thugware.hooks.sendSocketMessage({
-        "evt": Thugware.hooks.packets.WS_CONF_HOST_KEY_REQ,
-        "body": {
-            "hostKey": key
-        }
-    })();
-}
-
 function ForceHostKey () {
     let mainSDKInstance = this;
+
+    function tryHostKey (key) {
+        mainSDKInstance.hooks.sendSocketMessage({
+            "evt": mainSDKInstance.hooks.packets.WS_CONF_HOST_KEY_REQ,
+            "body": {
+                "hostKey": key
+            }
+        });
+    }
 
     if (!mainSDKInstance.packetHandler.initialized) {
         mainSDKInstance.packetHandler.init();
@@ -25,7 +25,7 @@ function ForceHostKey () {
     alert("This will probably take a LONG time, but you will be alerted with the code");
 
     let hostKey = 0;
-    packetHandler = Thugware.packetHandler.onPacket(function (packet, ctx) {
+    packetHandler = mainSDKInstance.packetHandler.onPacket(function (packet, ctx) {
         if (packet?.body?.bresult) {
             if (packet.body.bresult == 3036) {
                 hostKey++;
