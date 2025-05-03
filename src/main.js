@@ -1,3 +1,4 @@
+import AnonWhiteboard from "./Modules/AnonWhiteboard";
 import AutoRejoin from "./Modules/AutoRejoin";
 import AutoUnmute from "./Modules/autoUnmute";
 import BotMeeting from "./Modules/BotMeeting";
@@ -37,5 +38,6 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Hide Reactions", HideReactions.bind(mainSDKInstance));
     ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
     ThugwarePanel.addButton("Force Host Key", ForceHostKey.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Anon Whiteboard", AnonWhiteboard.bind(mainSDKInstance));
     
 }

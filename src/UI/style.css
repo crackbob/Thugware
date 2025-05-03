@@ -2,7 +2,7 @@
     position: fixed;
     width: 250px;
     overflow: hidden;
-    height: auto;
+    height: 500px;
     border: 1px solid rgb(68, 68, 68);
     background-color: rgb(15 15 15 / 95%);
     backdrop-filter: blur(4px);
@@ -36,13 +36,13 @@
     font-size: 15px;
 }
 
-.Thugware-slider {
-    width: 100%;
-    appearance: none;
-    height: 8px;
-    border-radius: 4px;
-    background: rgb(50, 50, 50);
-    outline: none;
-    transition: background 0.3s;
-    margin-top: 10px;
+.Thugware-button-container {
+    height: 90%;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.Thugware-button-container :-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }

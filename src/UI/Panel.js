@@ -11,6 +11,10 @@ export default class {
         this.header.textContent = title;
         this.panel.appendChild(this.header);
 
+        this.buttonContainer = document.createElement('div');
+        this.buttonContainer.className = "Thugware-button-container";
+        this.panel.appendChild(this.buttonContainer);
+
         this.isDragging = false;
         this.offset = { x: 0, y: 0 };
 
@@ -105,6 +109,7 @@ export default class {
 
             callback();
         });
-        this.panel.appendChild(button);
+
+        this.buttonContainer.appendChild(button);
     }
 }
