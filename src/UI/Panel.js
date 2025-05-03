@@ -74,22 +74,26 @@ export default class {
     }
 
     initDrag() {
-        this.header.addEventListener('mousedown', (event) => {
+        this.header.style.cursor = 'grab';
+
+        this.header.addEventListener('pointerdown', (event) => {
             this.isDragging = true;
             this.offset.x = event.clientX - this.panel.getBoundingClientRect().left;
             this.offset.y = event.clientY - this.panel.getBoundingClientRect().top;
+            this.header.setPointerCapture(event.pointerId);
             this.header.style.cursor = 'grabbing';
         });
 
-        document.addEventListener('mousemove', (event) => {
+        this.header.addEventListener('pointermove', (event) => {
             if (this.isDragging) {
                 this.panel.style.left = `${event.clientX - this.offset.x}px`;
                 this.panel.style.top = `${event.clientY - this.offset.y}px`;
             }
         });
 
-        document.addEventListener('mouseup', () => {
+        this.header.addEventListener('pointerup', (event) => {
             this.isDragging = false;
+            this.header.releasePointerCapture(event.pointerId);
             this.header.style.cursor = 'grab';
         });
     }
