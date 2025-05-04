@@ -4,7 +4,7 @@ let enabled = false;
 
 function AnonWhiteboard () {
     enabled = !enabled;
-    let whiteboard = Object.values(this.scope.document.getElementById("ui-components"))[0].child.pendingProps.children.props.wb;
+    let whiteboard = this.hooks.whiteboard;
     let followPlugin = whiteboard.plugins.get("followPlugin");
 
     if (_publishCursor == null) {

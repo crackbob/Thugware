@@ -21,6 +21,10 @@ export default function (scope) {
             return Object.values(scope.document.getElementById("root"))[0].memoizedState.element.props.store;
         },
 
+        get whiteboard() {
+            return Object.values(scope.document.getElementById("ui-components"))[0].child.pendingProps.children.props.wb;
+        },
+
         get state () {
             return this.store.getState();
         },

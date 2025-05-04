@@ -38,11 +38,7 @@
 
 .Thugware-button-container {
     height: 90%;
-    overflow: scroll;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
-
-.Thugware-button-container :-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+    overflow-y: scroll;
+    scrollbar-color: #29ff00 #000000;
+    scrollbar-width: thin;
 }
