@@ -39,5 +39,11 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
     ThugwarePanel.addButton("Force Host Key", ForceHostKey.bind(mainSDKInstance));
     ThugwarePanel.addButton("Anon Whiteboard", AnonWhiteboard.bind(mainSDKInstance));
-    
+}
+
+// auto launch meeting
+if (Array.from(document.querySelectorAll('div')).find(btn => btn.textContent.trim() === 'Launch Meeting')) {
+    let zoomServer = location.origin;
+    let meetingID = location.pathname.replace("/j/", "");
+    location.href = zoomServer + "/wc/join/" + meetingID + location.search;
 }
