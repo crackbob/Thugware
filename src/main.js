@@ -3,6 +3,7 @@ import AutoRejoin from "./Modules/AutoRejoin";
 import AutoUnmute from "./Modules/autoUnmute";
 import BotMeeting from "./Modules/BotMeeting";
 import ChatSpammer from "./Modules/ChatSpammer";
+import FloodMeeting from "./Modules/FloodMeeting";
 import ForceHostKey from "./Modules/ForceHostKey";
 import HandSpammer from "./Modules/HandSpammer";
 import HideNotifications from "./Modules/HideNotifications";
@@ -34,6 +35,7 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Spam Screenshare Control", SpamSSControl.bind(mainSDKInstance));
     ThugwarePanel.addButton("Auto Rejoin", AutoRejoin.bind(mainSDKInstance));
     ThugwarePanel.addButton("Bot Meeting", BotMeeting.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Flood Meeting", FloodMeeting.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Notifications", HideNotifications.bind(mainSDKInstance));
     ThugwarePanel.addButton("Hide Reactions", HideReactions.bind(mainSDKInstance));
     ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
