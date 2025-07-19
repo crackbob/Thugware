@@ -31,7 +31,7 @@ function HandSpammer () {
                 })
             }
 
-        }, 50 + window.spammerSpeed);
+        }, 1000 + window.spammerSpeed);
     }
 }
 
