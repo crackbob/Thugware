@@ -1,19 +1,11 @@
-import Panel from "../UI/Panel";
+let mediaRecorder = null;
+let recordedChunks = [];
 
-let currentRecordings = {};
-let membersPanel;
-
-function recordMember (index, videoPlayer, memberName) {
+function startRecording(videoPlayer) {
     let canvas = videoPlayer.render.getCanvas();
-    let mediaRecorder;
-    let recordedChunks = [];
-
-    if (currentRecordings[index]) {
-        currentRecordings[index].stop();
-        delete currentRecordings[index];
-    }
-
+    recordedChunks = [];
     const stream = canvas.captureStream(60);
+
     mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm; codecs=vp9' });
 
     mediaRecorder.ondataavailable = (event) => {
@@ -28,32 +20,28 @@ function recordMember (index, videoPlayer, memberName) {
 
         const a = document.createElement('a');
         a.href = url;
-        a.download = memberName + ".webm";
+        a.download = "meeting.webm";
+        document.body.appendChild(a);
         a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
     };
 
-    currentRecordings[index] = mediaRecorder;
     mediaRecorder.start();
 }
 
-function RecordMembers () {
+function RecordMembers() {
     let mainSDKInstance = this;
 
-    if (!membersPanel) {
-        membersPanel = new Panel("Members", false);
+    if (mediaRecorder) {
+        mediaRecorder.stop();
+        mediaRecorder = null;
     } else {
-        membersPanel.panel.remove();
-        membersPanel = null;
-        return;
+        let videoPanels = mainSDKInstance.scope.document.getElementsByTagName("video-player");
+        if (videoPanels[0]) {
+            startRecording(videoPanels[0]);
+        }
     }
-    
-    let memberVideos = {};
-    let videoPanels = mainSDKInstance.scope.document.getElementsByTagName("video-player");
-    Object.values(videoPanels).forEach((element) => {
-        memberVideos[element.parentElement.lastChild.firstChild.innerText] = element;
-    });
-
-    Object.keys(memberVideos).forEach((memberName, index) => membersPanel.addButton(memberName, () => recordMember(index, memberVideos[memberName], memberName)));
 }
 
 export default RecordMembers;
