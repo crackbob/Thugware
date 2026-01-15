@@ -4,7 +4,7 @@ function ForceHostKey () {
     let mainSDKInstance = this;
 
     function tryHostKey (key) {
-        mainSDKInstance.hooks.sendSocketMessage({
+        mainSDKInstance.hooks.dispatchSocketMessage({
             "evt": mainSDKInstance.hooks.packets.WS_CONF_HOST_KEY_REQ,
             "body": {
                 "hostKey": key

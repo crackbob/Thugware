@@ -1,7 +1,7 @@
 export default function (hooks) {
     return {
         changeUsername (username) {
-            hooks.sendSocketMessage({
+            hooks.dispatchSocketMessage({
                 "evt": hooks.packets.WS_CONF_RENAME_REQ,
                 "body": {
                     id: hooks.state.meeting.currentUser.userId,
@@ -17,7 +17,7 @@ export default function (hooks) {
                 enabled = !hooks.state.meeting.currentUser.muted;
             }
 
-            hooks.sendSocketMessage({
+            hooks.dispatchSocketMessage({
                 "evt": hooks.actionPackets.USER_NODE_AUDIO_STATUS_LIST,
                 "body": {
                     "add": null,
@@ -29,7 +29,7 @@ export default function (hooks) {
                 }
             });
             
-            hooks.sendSocketMessage({
+            hooks.dispatchSocketMessage({
                 "evt": hooks.packets.WS_AUDIO_MUTE_REQ,
                 "body": {
                     "id": hooks.state.meeting.currentUser.userId,
@@ -44,7 +44,7 @@ export default function (hooks) {
                 enabled = !hooks.state.meeting.currentUser.bRaiseHand;
             }
 
-            hooks.sendSocketMessage({
+            hooks.dispatchSocketMessage({
                 "evt": hooks.packets.WS_CONF_RAISE_LOWER_HAND_REQ,
                 "body": {
                     "id": hooks.state.meeting.currentUser.userId,
@@ -60,9 +60,9 @@ export default function (hooks) {
             }
 
             if (enabled) {
-                hooks.findModuleFn("user start capture video")()(Thugware.hooks.store.dispatch, Thugware.hooks.store.getState);
+                hooks.findModuleFn("user start capture video")()(hooks.store.dispatch, hooks.store.getState);
             } else {
-                hooks.sendSocketMessage({
+                hooks.dispatchSocketMessage({
                     evt: hooks.packets.WS_VIDEO_MUTE_VIDEO_REQ,
                     body: {
                         id: hooks.state.meeting.currentUser.userId,
@@ -73,7 +73,7 @@ export default function (hooks) {
         },
 
         sendReaction (emoji) {
-            hooks.sendSocketMessage({
+            hooks.dispatchSocketMessage({
                 evt: hooks.packets.WS_CONF_SEND_REACTION_REQ,
                 body: {
                     uNodeID: hooks.state.meeting.currentUser.userId,
@@ -83,7 +83,7 @@ export default function (hooks) {
         },
 
         requestAI () {
-            hooks.sendSocketMessage({
+            hooks.dispatchSocketMessage({
                 "evt": hooks.packets.WS_CONF_QUERY_OP_REQ,
                 "body": {
                     "type": "reqAICStart"
@@ -92,7 +92,7 @@ export default function (hooks) {
         },
 
         requestScreenshare (uid) {
-            hooks.sendSocketMessage({
+            hooks.dispatchSocketMessage({
                 "evt": hooks.packets.WS_SHARING_REMOTE_CONTROL_REQ,
                 "body": {
                     "id": uid,

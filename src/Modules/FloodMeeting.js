@@ -36,7 +36,7 @@ function createBot(container) {
                     }
                 };
 
-                botSDK.hooks.meetingSocket.handlers.onMessage({
+                botSDK.hooks.receivePacket({
                     data: JSON.stringify(packet)
                 });
             } catch (error) {

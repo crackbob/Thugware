@@ -13,8 +13,8 @@ export default function (scope) {
             return cache.wpRequire;
         },
 
-        get meetingSocket() {
-            return Object.values(scope.WCSockets.instance)[0];
+        get receivePacket() {
+            return cache.receivePacket ??= Thugware.hooks.findModuleFn(`.notifyCommandSocoket(`); // that is NOT my misspelling, its actually called that in zoom
         },
 
         get store() {
@@ -41,9 +41,13 @@ export default function (scope) {
             let packetIndex = Object.values(this.packets).findIndex(packet => packet == id);
             return Object.keys(this.packets)[packetIndex];
         },
-
+        
         get sendSocketMessage() {
-            return cache.sendSocketMessage ??= this.meetingSocket.send.bind(this.meetingSocket);
+            return cache.sendSocketMessage ??= this.findModuleFn(`case l.WS_AUDIO_DIALOUT_REQ:`);
+        },
+
+        dispatchSocketMessage (msg) {
+            return this.store.dispatch(this.sendSocketMessage(msg));
         },
 
         get sendChatMessage() {
