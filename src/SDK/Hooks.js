@@ -43,7 +43,7 @@ export default function (scope) {
         },
         
         get sendSocketMessage() {
-            return cache.sendSocketMessage ??= this.findModuleFn(`case l.WS_AUDIO_DIALOUT_REQ:`);
+            return cache.sendSocketMessage ??= this.findModuleFn(`.WS_AUDIO_DIALOUT_REQ:`);
         },
 
         dispatchSocketMessage (msg) {
