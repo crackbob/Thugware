@@ -1,6 +1,4 @@
-import config from "../config";
-
-function ReactionSpammer () {
+export default function ReactionSpammer () {
     let mainSDKInstance = this;
     if (ReactionSpammer.interval) {
         clearInterval(ReactionSpammer.interval);
@@ -22,5 +20,3 @@ function ReactionSpammer () {
         }, window.spammerSpeed);
     }
 }
-
-export default ReactionSpammer;

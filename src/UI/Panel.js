@@ -1,4 +1,12 @@
-import "./style.css";
+import styles from "./style.css";
+
+function injectCSS(css) {
+    const style = document.createElement("style");
+    style.textContent = css;
+    document.head.appendChild(style);
+}
+
+injectCSS(styles);
 
 export default class {
     constructor(title, toggle = true) {
