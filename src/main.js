@@ -5,6 +5,7 @@ import BotMeeting from "./Modules/BotMeeting";
 import ChatSpammer from "./Modules/ChatSpammer";
 import FloodMeeting from "./Modules/FloodMeeting";
 import ForceHostKey from "./Modules/ForceHostKey";
+import ForceWebJoin from "./Modules/ForceWebJoin";
 import HandSpammer from "./Modules/HandSpammer";
 import HideNotifications from "./Modules/HideNotifications";
 import HideReactions from "./Modules/HideReactions";
@@ -41,6 +42,7 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Record Members", RecordMembers.bind(mainSDKInstance));
     ThugwarePanel.addButton("Force Host Key", ForceHostKey.bind(mainSDKInstance));
     ThugwarePanel.addButton("Anon Whiteboard", AnonWhiteboard.bind(mainSDKInstance));
+    ThugwarePanel.addButton("Force Web Join", ForceWebJoin.bind(mainSDKInstance));
 }
 
 // auto launch meeting
