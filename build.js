@@ -8,7 +8,7 @@ const meta = `// ==UserScript==
 // @author crackbob
 // @homepage https://github.com/crackbob/Thugware
 // @supportURL https://github.com/crackbob/Thugware
-// @match *://app.zoom.us/*
+// @match *://*.zoom.us/*
 // @grant none
 // ==/UserScript==
 `;
