@@ -3,7 +3,7 @@ export default function (scope) {
 
     return {
         get wpRequire() {
-            if (!scope?.webpackChunkwebclient.find(arr => arr[2])) {
+            if (typeof cache.wpRequire !== "function" && !scope?.webpackChunkwebclient.find(arr => arr[2])) {
                 cache.wpRequire = scope.webpackChunkwebclient?.push([
                     [Symbol()], {},
                     r => r
