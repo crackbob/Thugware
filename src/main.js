@@ -1,4 +1,5 @@
 import AnonWhiteboard from "./Modules/AnonWhiteboard";
+import AntiFingerprint from "./Modules/AntiFingerprint";
 import AutoRejoin from "./Modules/AutoRejoin";
 import AutoUnmute from "./Modules/AutoUnmute";
 import BotMeeting from "./Modules/BotMeeting";
@@ -43,6 +44,10 @@ if (!alreadyInjected) {
     ThugwarePanel.addButton("Force Host Key", ForceHostKey.bind(mainSDKInstance));
     ThugwarePanel.addButton("Anon Whiteboard", AnonWhiteboard.bind(mainSDKInstance));
     ThugwarePanel.addButton("Force Web Join", ForceWebJoin.bind(mainSDKInstance));
+
+    ThugwarePanel.addButton("Anti Fingerprint", AntiFingerprint.bind(mainSDKInstance), true);
+    AntiFingerprint(); // on by default
+
 }
 
 // auto launch meeting

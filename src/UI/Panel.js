@@ -106,19 +106,25 @@ export default class {
         });
     }
 
-    addButton(title, callback) {
+    addButton(title, callback, enabled = false) {
         let button = document.createElement('button');
         button.className = "Thugware-button";
         button.innerText = title;
-        button.enabled = false;
-        button.addEventListener("click", function () {
-            button.enabled = !button.enabled;
+        button.enabled = enabled;
+
+        function updateStyle () {
             if (button.enabled) {
                 button.style.backgroundColor = "rgba(0, 194, 48, 0.85)";
             } else {
                 button.style.backgroundColor = "rgb(26 26 26 / 75%)";
             }
+        };
 
+        updateStyle();
+
+        button.addEventListener("click", function () {
+            button.enabled = !button.enabled;
+            updateStyle();
             callback();
         });
 

@@ -37,7 +37,8 @@
 }
 
 .Thugware-button-container {
-    height: 90%;
+    height: 100%;
+    padding-bottom: 25%;
     overflow-y: scroll;
     scrollbar-color: #29ff00 #000000;
     scrollbar-width: thin;
