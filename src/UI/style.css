@@ -7,7 +7,7 @@
     background-color: rgb(15 15 15 / 95%);
     backdrop-filter: blur(4px);
     color: rgb(255, 255, 255);
-    box-shadow: rgb(0 255 10 / 35%) 0px 5px 15px;
+    box-shadow: rgb(0 255 10 / 35%) 0px 0px 10px;
     border-radius: 10px;
     z-index: 999999;
     left: 100px;
@@ -23,7 +23,7 @@
     font-weight: 700;
     border-bottom: rgb(41 255 0) 1px solid;
     color: rgb(41 255 0);
-    text-shadow: 1px 1px 2px #00ff43, 0 0 1em #138500, 0 0 0.2em #082d00;
+    text-shadow: 0px 0px 2px #00ff43, 0 0 1em #138500, 0 0 0.2em #082d00;
 }
 
 .Thugware-button {

@@ -18,6 +18,7 @@ function addJoinButton () {
 
     const label = newBtn.querySelector("*");
     if (label) label.textContent = "Join from Browser";
+    newBtn.className = newBtn.className.replace("primary", "secondary");
 
     newBtn.onclick = (e) => {
         e.stopPropagation();
